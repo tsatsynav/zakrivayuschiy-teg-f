@@ -4,7 +4,9 @@
   "description": "practice",
   "main": "index.js",
   "scripts": {
-    "test": "echo 'Привет!'"
+    "test": "echo 'Привет!'",
+    "check": "prettier --check './**/*.{html,css,js}'",
+    "format": "prettier --write './**/*.{html,css,js}'"
   },
   "author": "Andrey Tsatsyn",
   "license": "ISC",
