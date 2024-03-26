@@ -9,6 +9,7 @@ const mediaquery = require("postcss-combine-media-query");
 const cssnano = require("cssnano");
 const htmlMinify = require("html-minifier");
 const gulpPug = require("gulp-pug");
+const sass = require("gulp-sass")(require("sass"));
 
 function serve() {
   browserSync.init({
@@ -51,6 +52,17 @@ function html() {
       );
       return (file.contents = buferFile);
     })
+    .pipe(gulp.dest("dist/"))
+    .pipe(browserSync.reload({ stream: true }));
+}
+
+function scss() {
+  const plugins = [autoprefixer(), mediaquery(), cssnano()];
+  return gulp
+    .src("./src/**/*.scss")
+    .pipe(sass())
+    .pipe(concat("bundle.css"))
+    .pipe(postcss(plugins))
     .pipe(gulp.dest("dist/"))
     .pipe(browserSync.reload({ stream: true }));
 }
@@ -100,12 +112,13 @@ function clean() {
 
 const build = gulp.series(
   clean,
-  gulp.parallel(pug, css, fonts, images, svg, scripts)
+  gulp.parallel(pug, scss, fonts, images, svg, scripts)
 );
 
 function watchFiles() {
   gulp.watch([".src/**/*.pug"], pug);
   gulp.watch(["./src/**/*.html"], html);
+  gulp.watch(["./src/**/*.scss"], scss);
   gulp.watch(["./src/**/*.css"], css);
   gulp.watch(["./src/fonts/**/*.{woff2,woff,ttf}"], fonts);
   gulp.watch(["./src/images/**/*.{jpg,png,gif,ico,webp,avif}"], images);
@@ -117,6 +130,7 @@ const watchapp = gulp.parallel(build, watchFiles, serve);
 exports.html = html;
 exports.pug = pug;
 exports.css = css;
+exports.scss = scss;
 exports.fonts = fonts;
 exports.images = images;
 exports.svg = svg;
