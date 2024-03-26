@@ -8,6 +8,7 @@ const autoprefixer = require("autoprefixer");
 const mediaquery = require("postcss-combine-media-query");
 const cssnano = require("cssnano");
 const htmlMinify = require("html-minifier");
+const gulpPug = require("gulp-pug");
 
 function serve() {
   browserSync.init({
@@ -15,6 +16,18 @@ function serve() {
       baseDir: "./dist",
     },
   });
+}
+
+function pug() {
+  return gulp
+    .src(".src/**/*.pug")
+    .pipe(
+      gulpPug({
+        pretty: true,
+      })
+    )
+    .pipe(gulp.dest("dist/"))
+    .pipe(browserSync.reload({ stream: true }));
 }
 
 function html() {
@@ -87,10 +100,11 @@ function clean() {
 
 const build = gulp.series(
   clean,
-  gulp.parallel(html, css, fonts, images, svg, scripts)
+  gulp.parallel(pug, css, fonts, images, svg, scripts)
 );
 
 function watchFiles() {
+  gulp.watch([".src/**/*.pug"], pug);
   gulp.watch(["./src/**/*.html"], html);
   gulp.watch(["./src/**/*.css"], css);
   gulp.watch(["./src/fonts/**/*.{woff2,woff,ttf}"], fonts);
@@ -101,6 +115,7 @@ function watchFiles() {
 const watchapp = gulp.parallel(build, watchFiles, serve);
 
 exports.html = html;
+exports.pug = pug;
 exports.css = css;
 exports.fonts = fonts;
 exports.images = images;
