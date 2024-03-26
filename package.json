@@ -1,0 +1,11 @@
+{
+  "name": "zakrivayuschiy-teg-f",
+  "version": "1.0.0",
+  "description": "practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo 'Привет!'"
+  },
+  "author": "Andrey Tsatsyn",
+  "license": "ISC"
+}
