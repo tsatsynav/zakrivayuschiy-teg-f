@@ -21,7 +21,7 @@ function serve() {
 
 function pug() {
   return gulp
-    .src(".src/**/*.pug")
+    .src("./src/pages/**/*.pug")
     .pipe(
       gulpPug({
         pretty: true,
@@ -116,7 +116,7 @@ const build = gulp.series(
 );
 
 function watchFiles() {
-  gulp.watch([".src/**/*.pug"], pug);
+  gulp.watch(["./src/**/*.pug"], pug);
   gulp.watch(["./src/**/*.html"], html);
   gulp.watch(["./src/**/*.scss"], scss);
   gulp.watch(["./src/**/*.css"], css);
