@@ -1,33 +1,33 @@
-const gulp = require("gulp");
-const concat = require("gulp-concat-css");
-const plumber = require("gulp-plumber");
-const del = require("del");
-const browserSync = require("browser-sync").create();
-const postcss = require("gulp-postcss");
-const autoprefixer = require("autoprefixer");
-const mediaquery = require("postcss-combine-media-query");
-const cssnano = require("cssnano");
-const htmlMinify = require("html-minifier");
-const gulpPug = require("gulp-pug");
-const sass = require("gulp-sass")(require("sass"));
+const gulp = require('gulp');
+const concat = require('gulp-concat-css');
+const plumber = require('gulp-plumber');
+const del = require('del');
+const browserSync = require('browser-sync').create();
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+const mediaquery = require('postcss-combine-media-query');
+const cssnano = require('cssnano');
+const htmlMinify = require('html-minifier');
+const gulpPug = require('gulp-pug');
+const sass = require('gulp-sass')(require('sass'));
 
 function serve() {
   browserSync.init({
     server: {
-      baseDir: "./dist",
+      baseDir: './dist',
     },
   });
 }
 
 function pug() {
   return gulp
-    .src("./src/pages/**/*.pug")
+    .src('./src/pages/**/*.pug')
     .pipe(
       gulpPug({
         pretty: true,
       })
     )
-    .pipe(gulp.dest("dist/"))
+    .pipe(gulp.dest('dist/'))
     .pipe(browserSync.reload({ stream: true }));
 }
 
@@ -44,70 +44,70 @@ function html() {
     keepClosingSlash: true,
   };
   return gulp
-    .src("./src/**/*.html")
+    .src('./src/**/*.html')
     .pipe(plumber())
-    .on("data", function (file) {
+    .on('data', function (file) {
       const buferFile = Buffer.from(
         htmlMinify.minify(file.contents.toString(), options)
       );
       return (file.contents = buferFile);
     })
-    .pipe(gulp.dest("dist/"))
+    .pipe(gulp.dest('dist/'))
     .pipe(browserSync.reload({ stream: true }));
 }
 
 function scss() {
   const plugins = [autoprefixer(), mediaquery(), cssnano()];
   return gulp
-    .src("./src/**/*.scss")
+    .src('./src/**/*.scss')
     .pipe(sass())
-    .pipe(concat("bundle.css"))
+    .pipe(concat('bundle.css'))
     .pipe(postcss(plugins))
-    .pipe(gulp.dest("dist/"))
+    .pipe(gulp.dest('dist/'))
     .pipe(browserSync.reload({ stream: true }));
 }
 
 function css() {
   const plugins = [autoprefixer(), mediaquery(), cssnano()];
   return gulp
-    .src("./src/**/*.css")
+    .src('./src/**/*.css')
     .pipe(plumber())
-    .pipe(concat("bundle.css"))
+    .pipe(concat('bundle.css'))
     .pipe(postcss(plugins))
-    .pipe(gulp.dest("dist/"))
+    .pipe(gulp.dest('dist/'))
     .pipe(browserSync.reload({ stream: true }));
 }
 
 function fonts() {
   return gulp
-    .src("./src/fonts/**/*.{woff2,woff,ttf}")
-    .pipe(gulp.dest("dist/fonts"))
+    .src('./src/fonts/**/*.{woff2,woff,ttf}')
+    .pipe(gulp.dest('dist/fonts'))
     .pipe(browserSync.reload({ stream: true }));
 }
 
 function images() {
   return gulp
-    .src("./src/images/**/*.{jpg,png,gif,ico,webp,avif}")
-    .pipe(gulp.dest("dist/images"))
+    .src('./src/images/**/*.{jpg,png,gif,ico,webp,avif}')
+    .pipe(gulp.dest('dist/images'))
     .pipe(browserSync.reload({ stream: true }));
 }
 
 function svg() {
   return gulp
-    .src("./src/svg/**/*.svg")
-    .pipe(gulp.dest("dist/svg"))
+    .src('./src/svg/**/*.svg')
+    .pipe(gulp.dest('dist/svg'))
     .pipe(browserSync.reload({ stream: true }));
 }
 
 function scripts() {
   return gulp
-    .src("./src/scripts/**/*.js")
-    .pipe(gulp.dest("dist/scripts"))
+    .src('./src/scripts/**/*.js')
+    .pipe(gulp.dest('dist/scripts'))
     .pipe(browserSync.reload({ stream: true }));
 }
 
 function clean() {
-  return del("dist");
+  return del('dist');
 }
 
 const build = gulp.series(
@@ -116,14 +116,14 @@ const build = gulp.series(
 );
 
 function watchFiles() {
-  gulp.watch(["./src/**/*.pug"], pug);
-  gulp.watch(["./src/**/*.html"], html);
-  gulp.watch(["./src/**/*.scss"], scss);
-  gulp.watch(["./src/**/*.css"], css);
-  gulp.watch(["./src/fonts/**/*.{woff2,woff,ttf}"], fonts);
-  gulp.watch(["./src/images/**/*.{jpg,png,gif,ico,webp,avif}"], images);
-  gulp.watch(["./src/svg/**/*.svg"], svg);
-  gulp.watch(["./src/scripts/**/*.js"], scripts);
+  gulp.watch(['./src/**/*.pug'], pug);
+  gulp.watch(['./src/**/*.html'], html);
+  gulp.watch(['./src/**/*.scss'], scss);
+  gulp.watch(['./src/**/*.css'], css);
+  gulp.watch(['./src/fonts/**/*.{woff2,woff,ttf}'], fonts);
+  gulp.watch(['./src/images/**/*.{jpg,png,gif,ico,webp,avif}'], images);
+  gulp.watch(['./src/svg/**/*.svg'], svg);
+  gulp.watch(['./src/scripts/**/*.js'], scripts);
 }
 const watchapp = gulp.parallel(build, watchFiles, serve);
 
