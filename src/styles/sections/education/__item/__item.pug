@@ -1,0 +1,12 @@
+block items
+  mixin item(cardTitle, cardLabel, cardImgSrc, cardImgAlt, cardIntro, cardMemo)
+  li.education__item
+    article.card
+      h3.card__title= cardTitle
+      .card__image-block
+        span.card__label= cardLabel
+        img.card__image(src=cardImgSrc, alt=cardImgAlt)
+      .card__content
+        p.card__text-intro= cardIntro
+        p.card__text-memo= cardMemo
+      button Like
