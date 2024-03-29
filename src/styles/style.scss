@@ -14,7 +14,11 @@
 
 */
 
-.page {
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
-}
+@import '../fonts/fonts';
+@import './variables/variables';
+@import './globals/globals';
+@import './page/page';
+@import './header/header';
+@import './main/main';
+@import './animations/animations';
+@import './themes/themes';

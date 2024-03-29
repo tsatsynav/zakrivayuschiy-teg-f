@@ -57,9 +57,13 @@ function html() {
 }
 
 function scss() {
-  const plugins = [autoprefixer(), mediaquery(), cssnano()];
+  const plugins = [
+    autoprefixer(),
+    mediaquery(),
+    // cssnano()
+  ];
   return gulp
-    .src('./src/**/*.scss')
+    .src('./src/styles/style.scss')
     .pipe(sass())
     .pipe(concat('bundle.css'))
     .pipe(postcss(plugins))
