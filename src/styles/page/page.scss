@@ -1,9 +1,10 @@
+@import '../mixins/display-flex-column';
+
 .page {
+  @include display-flex-column;
   min-inline-size: 320px;
   min-block-size: 100dvb;
   max-inline-size: 700px;
-  display: flex;
-  flex-direction: column;
   gap: 102px;
   margin: 0 auto;
   padding-block-start: 102px;

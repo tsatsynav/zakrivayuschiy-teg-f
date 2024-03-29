@@ -1,6 +1,7 @@
+@import '../../mixins/display-flex-column';
+
 .education {
-  display: flex;
-  flex-direction: column;
+  @include display-flex-column;
 }
 
 @import './list/list';

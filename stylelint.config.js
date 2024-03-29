@@ -16,5 +16,6 @@ module.exports = {
       },
     ],
     'no-invalid-position-at-import-rule': null,
+    'declaration-empty-line-before': 'never',
   },
 };

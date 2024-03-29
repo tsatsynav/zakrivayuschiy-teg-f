@@ -1,6 +1,7 @@
+@import '../mixins/display-flex-column';
+
 .header {
-  display: flex;
-  flex-direction: column;
+  @include display-flex-column;
   gap: 25px;
   align-items: center;
   padding: 126px 0 25px;
@@ -9,8 +10,7 @@
   font-family: 'PressStart2P', sans-serif;
 
   &__logo-group {
-    display: flex;
-    flex-direction: column;
+    @include display-flex-column;
     gap: 20px;
     align-items: center;
   }
@@ -25,8 +25,7 @@
   }
 
   &__list {
-    display: flex;
-    flex-direction: column;
+    @include display-flex-column;
     gap: 14px;
   }
 }

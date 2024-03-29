@@ -1,10 +1,10 @@
+@import '../../../mixins/display-flex-column';
+
 .card {
-  display: flex;
-  flex-direction: column;
+  @include display-flex-column;
 
   &__image-group {
-    display: flex;
-    flex-direction: column;
+    @include display-flex-column;
   }
 
   &__image {
@@ -12,7 +12,6 @@
   }
 
   &__content {
-    display: flex;
-    flex-direction: column;
+    @include display-flex-column;
   }
 }
