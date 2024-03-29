@@ -1,0 +1,20 @@
+@import '../../mixins/display-flex-column';
+
+.theme-menu {
+  &__list {
+    @include display-flex-column;
+    gap: 14px;
+  }
+
+  &__button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  &__button:hover {
+    cursor: pointer;
+  }
+}

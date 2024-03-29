@@ -7,6 +7,8 @@ block items
           span.card__label= cardLabel
           img.card__image(src=cardImgSrc, alt=cardImgAlt)
         .card__content
-          p.card__text-intro= cardIntro
-          p.card__text-memo= cardMemo
-        button Like
+          .card__description
+            p.card__text-intro= cardIntro
+            p.card__text-memo= cardMemo
+          .card__button-line
+            button.card__button(type='button') Like

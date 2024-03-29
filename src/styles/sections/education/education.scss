@@ -2,6 +2,7 @@
 
 .education {
   @include display-flex-column;
+  background-color: #fff;
 }
 
 @import './list/list';

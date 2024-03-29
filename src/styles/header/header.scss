@@ -23,9 +23,6 @@
   &__title {
     font-size: clamp(0.875rem, 0.7143rem + 0.8036vw, 1.4375rem);
   }
-
-  &__list {
-    @include display-flex-column;
-    gap: 14px;
-  }
 }
+
+@import './theme-menu/theme-menu';

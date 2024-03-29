@@ -1,10 +1,27 @@
 @import '../../../mixins/display-flex-column';
 
+.education__item {
+  border: 2px solid #000;
+  background-color: #fff;
+}
+
 .card {
   @include display-flex-column;
 
-  &__image-group {
+  &__title {
+    padding: 4px 10px 6px;
+  }
+
+  &__image-block {
     @include display-flex-column;
+    position: relative;
+  }
+
+  &__label {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    color: white;
   }
 
   &__image {
@@ -13,5 +30,20 @@
 
   &__content {
     @include display-flex-column;
+    padding: 25px;
+    gap: 25px;
+  }
+
+  &__description {
+    @include display-flex-column;
+    gap: 27px;
+  }
+
+  &__button-line {
+    display: flex;
+    justify-content: end;
+  }
+
+  &__button {
   }
 }
