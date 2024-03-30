@@ -46,7 +46,7 @@
     opacity: 0.6;
   }
 
-  &__button:disabled:before {
+  &__button:disabled::before {
     content: '▶';
     inline-size: 15px;
     block-size: 15px;

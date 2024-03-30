@@ -13,6 +13,7 @@
   --theme-menu-button-font-size: 14px;
   --card-title-font-size: clamp(1.125rem, 1.125rem + 0vw, 1.125rem);
   --label-font-size: 14px;
+  --button-font-size: 14px;
 
   // <<<---COLOR & BACKGROUND--->>>
 
@@ -26,4 +27,5 @@
   --background-color: #fff;
   --accent-color: #000;
   --label-color: var(--background-color);
+  --button-color: var(--background-color);
 }

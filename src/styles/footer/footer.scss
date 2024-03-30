@@ -1,4 +1,24 @@
-.floppy {
+@import '../mixins/display-flex-column.scss';
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block-start: 52px;
+  padding-block-end: 100px;
+  background-color: var(--background-color);
+
+  &__button {
+    @include display-flex-column;
+    gap: 8px;
+    align-items: center;
+    padding: 15px 20px;
+  }
+}
+
+.footer__svg {
   inline-size: 30px;
   block-size: 30px;
+  // fill: var(--button-color);
+  mix-blend-mode: difference;
 }

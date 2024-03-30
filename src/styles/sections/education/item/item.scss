@@ -65,8 +65,31 @@
     gap: 12px;
   }
 
-  &__like-button {
+  &__icon-button {
+    display: flex;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: transparent;
   }
+
+  // &__icon-button:focus {
+  //   outline: none;
+  // }
+
+  // &__icon-button:focus-visible {
+  //   border-color:;
+  // }
+
+  &__like-button {
+    inline-size: 130px;
+    padding: 9px 0;
+  }
+}
+
+.like-icon {
+  inline-size: 39px;
+  block-size: 36px;
 }
 
 // .like-icon {
@@ -77,16 +100,3 @@
 //   outline: none;
 //   padding: 0;
 // }
-
-.card__icon-button {
-  cursor: pointer;
-  outline: none;
-  background-color: var(--background-color);
-  height: 38px;
-  display: flex;
-  border: 2px solid transparent;
-  align-items: center;
-  justify-content: center;
-  transition: border 0.3s ease;
-  margin-right: 4px;
-}
