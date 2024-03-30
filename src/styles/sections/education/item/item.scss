@@ -1,8 +1,8 @@
 @import '../../../mixins/display-flex-column';
 
 .education__item {
-  border: 2px solid #000;
-  background-color: #fff;
+  border: 2px solid var(--accent-color);
+  background-color: var(--background-color);
 }
 
 .card {
@@ -10,6 +10,7 @@
 
   &__title {
     padding: 4px 10px 6px;
+    font-size: var(--card-title-font-size);
   }
 
   &__image-block {
@@ -21,7 +22,26 @@
     position: absolute;
     right: 25px;
     top: 25px;
-    color: white;
+    font-family: var(--accent-font-family);
+    font-size: var(--label-font-size);
+    opacity: 0.5;
+    mix-blend-mode: hard-light;
+    text-shadow:
+      1px 0 var(--label-color),
+      -1px 0 var(--label-color),
+      0 1px var(--label-color),
+      0 -1px var(--label-color);
+  }
+
+  @supports (
+    (text-stroke: 1px var(--label-color)) or
+      (-webkit-text-stroke: 1px var(--label-color))
+  ) {
+    &__label {
+      -webkit-text-stroke: 1px var(--label-color);
+      text-stroke: 1px var(--label-color);
+      text-shadow: none;
+    }
   }
 
   &__image {
@@ -42,8 +62,31 @@
   &__button-line {
     display: flex;
     justify-content: end;
+    gap: 12px;
   }
 
-  // &__button {
-  // }
+  &__like-button {
+  }
+}
+
+// .like-icon {
+//   width: 39px;
+//   height: 36px;
+//   background-color: transparent;
+//   border: none;
+//   outline: none;
+//   padding: 0;
+// }
+
+.card__icon-button {
+  cursor: pointer;
+  outline: none;
+  background-color: var(--background-color);
+  height: 38px;
+  display: flex;
+  border: 2px solid transparent;
+  align-items: center;
+  justify-content: center;
+  transition: border 0.3s ease;
+  margin-right: 4px;
 }

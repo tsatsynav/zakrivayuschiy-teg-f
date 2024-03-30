@@ -2,12 +2,12 @@
 
 .header {
   @include display-flex-column;
-  gap: 25px;
+  gap: 22px;
   align-items: center;
-  padding: 126px 0 25px;
-  border: 2px solid #000;
-  background-color: #fff;
-  font-family: 'PressStart2P', sans-serif;
+  padding: 136px 0 23px;
+  border: 2px solid var(--accent-color);
+  background-color: var(--background-color);
+  font-family: var(--accent-font-family), sans-serif;
 
   &__logo-group {
     @include display-flex-column;
@@ -16,12 +16,14 @@
   }
 
   &__link {
-    font-size: clamp(3.0625rem, 2.7768rem + 1.4286vw, 4.0625rem);
+    font-size: var(--header-link-font-size);
     text-decoration: none;
+    text-transform: uppercase;
   }
 
   &__title {
-    font-size: clamp(0.875rem, 0.7143rem + 0.8036vw, 1.4375rem);
+    font-size: var(--header-title-font-size);
+    text-transform: uppercase;
   }
 }
 

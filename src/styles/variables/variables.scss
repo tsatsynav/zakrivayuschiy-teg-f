@@ -1,1 +1,29 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  // <<<---FONTS--->>>
+
+  --main-font-family: 'Inter-Variable';
+  --accent-font-family: 'PressStart2P';
+  --fallback-font-family: 'Roboto';
+  --min-font-weight: 400;
+  --max-font-weight: 700;
+  --main-font-size: 18px;
+  --header-title-font-size: clamp(0.875rem, 0.7143rem + 0.8036vw, 1.4375rem);
+  --header-link-font-size: clamp(3.0625rem, 2.7768rem + 1.4286vw, 4.0625rem);
+  --theme-menu-button-font-size: 14px;
+  --card-title-font-size: clamp(1.125rem, 1.125rem + 0vw, 1.125rem);
+  --label-font-size: 14px;
+
+  // <<<---COLOR & BACKGROUND--->>>
+
+  --background-image: repeating-linear-gradient(
+      90deg,
+      #d3d3d3 0 2px,
+      transparent 2px 4px
+    ),
+    repeating-linear-gradient(180deg, #d3d3d3 0 2px, transparent 2px 4px),
+    linear-gradient(180deg, #e7e7e7 0.01%, #1a1a1a);
+  --background-color: #fff;
+  --accent-color: #000;
+  --label-color: var(--background-color);
+}

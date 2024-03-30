@@ -1,20 +1,57 @@
 @import '../../mixins/display-flex-column';
 
 .theme-menu {
+  padding-inline-start: 21px;
+
   &__list {
     @include display-flex-column;
-    gap: 14px;
+    gap: 9px;
   }
 
   &__button {
+    position: relative;
     border: none;
     outline: none;
     background-color: transparent;
-    font-size: 14px;
+    font-size: var(--theme-menu-button-font-size);
     text-transform: uppercase;
+    transition: 0.3s ease;
   }
 
   &__button:hover {
+    opacity: 0.6;
     cursor: pointer;
+  }
+
+  &__button:disabled {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  &__button::after {
+    content: '';
+    display: block;
+    height: 2px;
+    transform: scaleX(0);
+    background-color: var(--accent-color);
+    transition: 0.5s;
+  }
+
+  &__button:focus-visible::after {
+    transform: scaleX(1);
+  }
+
+  &__button:focus {
+    outline: none;
+    opacity: 0.6;
+  }
+
+  &__button:disabled:before {
+    content: '▶';
+    inline-size: 15px;
+    block-size: 15px;
+    left: -15px;
+    position: absolute;
+    animation: arrow-dancing 0.9s ease-in-out infinite;
   }
 }
