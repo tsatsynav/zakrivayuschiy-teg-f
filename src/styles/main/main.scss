@@ -1,6 +1,9 @@
+// <<< - - - MAIN STYLES & HUB - - - >>>
+
+@import '../mixins/display-flex-column';
+
 .main {
-  display: flex;
-  flex-direction: column;
+  @include display-flex-column;
   flex-grow: 1;
 }
 

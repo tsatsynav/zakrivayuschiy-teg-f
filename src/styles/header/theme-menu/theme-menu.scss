@@ -1,3 +1,5 @@
+// <<< - - - MENU STYLES - - - >>>
+
 @import '../../mixins/display-flex-column';
 
 .theme-menu {
@@ -19,6 +21,11 @@
     transition: 0.3s ease;
   }
 
+  &__button:focus {
+    outline: none;
+    opacity: 0.6;
+  }
+
   &__button:hover {
     opacity: 0.6;
     cursor: pointer;
@@ -35,16 +42,11 @@
     height: 2px;
     transform: scaleX(0);
     background-color: var(--accent-color);
-    transition: 0.5s;
+    transition: 0.6s;
   }
 
   &__button:focus-visible::after {
     transform: scaleX(1);
-  }
-
-  &__button:focus {
-    outline: none;
-    opacity: 0.6;
   }
 
   &__button:disabled::before {
@@ -53,6 +55,6 @@
     block-size: 15px;
     left: -15px;
     position: absolute;
-    animation: arrow-dancing 0.9s ease-in-out infinite;
+    animation: arrow 0.6s ease-in-out infinite alternate;
   }
 }

@@ -1,3 +1,5 @@
+// <<< - - - HEADER STYLES & HUB - - - >>>
+
 @import '../mixins/display-flex-column';
 
 .header {
@@ -6,7 +8,7 @@
   align-items: center;
   padding: 136px 0 23px;
   margin-block-end: 102px;
-  border: 2px solid var(--accent-color);
+  border: var(--border-pattern);
   background-color: var(--background-color);
   font-family: var(--accent-font-family), sans-serif;
 

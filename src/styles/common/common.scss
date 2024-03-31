@@ -1,7 +1,8 @@
-// <<<--- COMMON STYLES --->>>
+// <<< - - - COMMON STYLES - - - >>>
+
 .page-button {
   position: relative;
-  border: 2px solid var(--accent-color);
+  border: var(--border-pattern);
   font-family: var(--accent-font-family), sans-serif;
   font-size: var(--button-font-size);
   background-color: transparent;
@@ -10,7 +11,7 @@
 
 .page-button:focus {
   outline: none;
-  box-shadow: 2px 2px 0 0 var(--accent-color);
+  box-shadow: --box-shadow-pattern;
   transition: 0.3s ease;
 }
 

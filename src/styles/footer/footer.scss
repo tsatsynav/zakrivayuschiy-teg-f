@@ -1,3 +1,5 @@
+// <<< - - - FOOTER STYLES - - - >>>
+
 @import '../mixins/display-flex-column';
 
 .footer {
@@ -12,6 +14,7 @@
     gap: 8px;
     align-items: center;
     padding: 15px 20px;
+    color: var(--accent-color);
   }
 }
 
@@ -21,19 +24,21 @@
   mix-blend-mode: difference;
 }
 
-/* Modal */
-
 .dialog {
+  position: fixed;
+  inset: 0;
   font-family: var(--accent-font-family);
   font-size: 14px;
   padding: 30px 26px;
   color: var(--accent-color);
   background: var(--background-color);
-  border: 2px solid var(--accent-color);
+  border: var(--border-pattern);
+  transition: opacity 0.9s ease-in-out;
 }
 
 .dialog::backdrop {
-  background-color: rgba(0 0 0 / 75%);
+  background-color: rgb(0 0 0 / 30%);
+  backdrop-filter: blur(7px);
 }
 
 .dialog:not([open]) {
@@ -47,39 +52,27 @@
   gap: 26px;
 }
 
-@media (width <= 375px) {
-  .dialog__container {
-    gap: 28px;
-  }
-}
-
 .dialog__text {
   text-transform: uppercase;
   line-height: 1.5;
-  max-width: 234px;
+  max-inline-size: 234px;
   width: 100%;
 }
 
 .dialog__text-container {
   display: flex;
   gap: 22px;
-  align-items: center;
 }
 
-@media (width <= 375px) {
-  .dialog__text {
-    width: 80%;
-  }
-}
-
-.dialog .floppy-image {
-  width: 39px;
-  height: 39px;
+.dialog .floppy {
+  inline-size: 39px;
+  box-sizing: 39px;
   mix-blend-mode: normal;
 }
 
-@media (width <= 375px) {
-  .dialog {
-    padding: 32px 38px;
-  }
+.dialog-button {
+  inline-size: 100%;
+  padding: 10px 0;
+  background: var(--page-background);
+  text-transform: uppercase;
 }
