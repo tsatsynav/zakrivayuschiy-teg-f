@@ -3,6 +3,20 @@ footer.footer
     onclick='window[\'dialog-id\'].showModal();',
     aria-controls='dialog-id'
   )
-    svg.footer__svg
+    svg.floppy(viewbox='0 0 28 28')
       use(href='../../svg/floppy.svg#floppy')
     span.footer__button-text.button__text Сохранить на память
+
+dialog#dialog-id.dialog
+  .dialog__container
+    .dialog__text-container
+      svg.floppy(viewbox='0 0 28 28')
+        use(href='../../svg/floppy.svg#floppy')
+      p.dialog__text Вставьте дискету, чтобы продолжить
+    form
+      button.button.ok-button(
+        onclick='window[\'dialog-id\'].close()',
+        type='submit',
+        aria-controls='dialog-id'
+      )
+        span.button__text Ok
