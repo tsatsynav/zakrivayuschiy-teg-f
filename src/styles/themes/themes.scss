@@ -54,6 +54,7 @@
 
   --border-pattern: 2px solid var(--accent-color);
   --box-shadow-pattern: 2px 2px 0 0 var(--accent-color);
+  --floppy-color: var(--background-color);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -126,4 +127,5 @@
 
   --border-pattern: 2px solid var(--accent-color);
   --box-shadow-pattern: 2px 2px 0 0 var(--accent-color);
+  --floppy-color: var(--accent-color);
 }

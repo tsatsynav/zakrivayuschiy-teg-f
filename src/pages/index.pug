@@ -5,3 +5,25 @@ block main
     section.section.education
       h2.section-title.visually-hidden
       include ../styles/sections/education/list/list
+      button.save__button.page-button(
+        onclick='window[\'dialog-id\'].showModal();',
+        aria-controls='dialog-id',
+        type='button'
+      )
+        svg.floppy(viewbox='0 0 23 29')
+          use(href='../../svg/floppy.svg#floppy')
+        span.footer__button-text.button__text Сохранить на&nbsp;память
+
+    dialog#dialog-id.dialog
+      .dialog__container
+        .dialog__text-container
+          svg.floppy(viewbox='0 0 21 21')
+            use(href='../../svg/floppy.svg#floppy')
+          p.dialog__text Вставьте дискету, чтобы продолжить
+        form
+          button.page-button.dialog-button(
+            onclick='window[\'dialog-id\'].close()',
+            type='button',
+            aria-controls='dialog-id'
+          )
+            span.button__text Ok

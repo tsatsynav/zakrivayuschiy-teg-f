@@ -7,7 +7,7 @@
 
   &__list {
     @include display-flex-column;
-    gap: 9px;
+    gap: 7px;
   }
 
   &__button {
@@ -40,13 +40,13 @@
     content: '';
     display: block;
     height: 2px;
-    transform: scaleX(0);
+    width: 0;
     background-color: var(--accent-color);
-    transition: 0.6s;
+    transition: 0.3s;
   }
 
   &__button:focus-visible::after {
-    transform: scaleX(1);
+    width: 100%;
   }
 
   &__button:disabled::before {

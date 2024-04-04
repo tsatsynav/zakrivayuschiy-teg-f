@@ -3,7 +3,6 @@
 @import '../../../mixins/display-flex-column';
 
 .education__item {
-  border: var(--border-pattern);
   background-color: var(--background-color);
 }
 
@@ -12,15 +11,17 @@
   border: var(--border-pattern);
 
   &__title {
-    padding: 4px 10px 6px;
+    padding: 4px 8px 4px;
     font-size: var(--card-title-font-size);
   }
 
   &__image-block {
     @include display-flex-column;
     position: relative;
-    border-top: var(--border-pattern);
-    border-bottom: var(--border-pattern);
+    border-top: 4px solid var(--accent-color);
+    border-bottom: 4px solid var(--accent-color);
+    border-left: 1px solid var(--accent-color);
+    border-right: 1px solid var(--accent-color);
   }
 
   &__label {
@@ -48,6 +49,7 @@
 
   &__image {
     inline-size: 100%;
+    aspect-ratio: 1/1;
     object-fit: cover;
     object-position: center;
   }
@@ -55,18 +57,17 @@
   &__content {
     @include display-flex-column;
     padding: 25px;
-    gap: 25px;
+    gap: 26px;
   }
 
   &__description {
     @include display-flex-column;
-    gap: 27px;
+    gap: 26px;
   }
 
   &__button-line {
     display: flex;
     justify-content: end;
-    gap: 12px;
   }
 
   &__icon-button {
@@ -83,6 +84,7 @@
 
   &__icon-button:focus-visible {
     outline: var(--border-pattern);
+    outline-offset: -2px;
   }
 
   &__like-button {
@@ -122,64 +124,4 @@
 .like-icon {
   inline-size: 39px;
   block-size: 36px;
-}
-
-.like-icon .heart {
-  transition: fill 0.1s;
-  transform-origin: center center;
-}
-
-.like-icon .contour {
-  fill: var(--accent-color);
-}
-
-.like-icon .main-body {
-  fill: var(--background-color);
-  transition: fill 0.3s linear;
-}
-
-.like-icon .core {
-  fill: var(--background-color);
-  transition: fill 0.3s 0.1s;
-}
-
-.like-icon .sparks {
-  opacity: 0;
-  fill: var(--sparks-color);
-}
-
-.like-icon:hover .main-body {
-  fill: var(--accent-color);
-}
-
-.like-icon:hover .core {
-  fill: var(--accent-color);
-}
-
-.like-icon:active .main-body {
-  fill: var(--accent-color);
-}
-
-.like-icon:active .core {
-  fill: var(--sparks-color);
-}
-
-.like-icon.is-liked .contour {
-  fill: var(--sparks-color);
-}
-
-.like-icon.is-liked .main-body {
-  fill: var(--sparks-color);
-}
-
-.like-icon.is-liked .core {
-  fill: var(--sparks-color);
-}
-
-.like-icon.is-liked .heart {
-  animation: scale-animation 0.3s ease-in 0.1s;
-}
-
-.like-icon.is-liked .sparks {
-  animation: sparks-animation 0.3s ease-in 0.3s;
 }

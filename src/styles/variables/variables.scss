@@ -4,7 +4,6 @@
 
   --main-font-family: 'Inter-Variable';
   --accent-font-family: 'PressStart2P';
-  --fallback-font-family: 'Roboto';
   --min-font-weight: 400;
   --max-font-weight: 700;
   --main-font-size: 18px;
@@ -48,4 +47,5 @@
 
   --border-pattern: 2px solid var(--accent-color);
   --box-shadow-pattern: 2px 2px 0 0 var(--accent-color);
+  --floppy-color: var(--background-color);
 }

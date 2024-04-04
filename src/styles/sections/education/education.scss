@@ -4,7 +4,78 @@
 
 .education {
   @include display-flex-column;
-  background-color: var(--background-color);
+  gap: 50px;
+  padding-block-end: 100px;
 }
 
 @import './list/list';
+
+.save__button {
+  inline-size: 310px;
+  @include display-flex-column;
+  align-self: center;
+  align-items: center;
+  padding: 14px 18px;
+  background-color: var(--background-color);
+  color: var(--accent-color);
+}
+
+.floppy {
+  inline-size: 38px;
+  block-size: 38px;
+  mix-blend-mode: difference;
+  color: var(--floppy-color);
+}
+
+.dialog {
+  position: fixed;
+  inset: 0;
+  font-family: var(--accent-font-family);
+  font-size: 14px;
+  padding: 30px 26px;
+  color: var(--accent-color);
+  background: var(--background-color);
+  border: var(--border-pattern);
+  transition: opacity 0.9s ease-in-out;
+}
+
+.dialog::backdrop {
+  background-color: rgb(0 0 0 / 75%);
+}
+
+.dialog:not([open]) {
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.dialog__container {
+  @include display-flex-column;
+  gap: 26px;
+}
+
+.dialog__text {
+  text-transform: uppercase;
+  line-height: 1.5;
+  max-inline-size: 234px;
+  width: 100%;
+}
+
+.dialog__text-container {
+  display: flex;
+  gap: 22px;
+}
+
+.dialog .floppy {
+  inline-size: 55px;
+  block-size: 55px;
+  mix-blend-mode: normal;
+  color: var(--accent-color);
+}
+
+.dialog-button {
+  inline-size: 100%;
+  padding: 10px 0;
+  background: var(--page-background);
+  text-transform: uppercase;
+}

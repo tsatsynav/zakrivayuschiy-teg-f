@@ -7,11 +7,16 @@
   font-size: var(--button-font-size);
   background-color: transparent;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .page-button:focus {
   outline: none;
-  box-shadow: --box-shadow-pattern;
+}
+
+.page-button:focus-visible {
+  box-shadow: var(--box-shadow-pattern);
+  outline: none;
   transition: 0.3s ease;
 }
 
