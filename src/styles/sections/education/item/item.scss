@@ -18,10 +18,8 @@
   &__image-block {
     @include display-flex-column;
     position: relative;
-    border-top: 4px solid var(--accent-color);
-    border-bottom: 4px solid var(--accent-color);
-    border-left: 1px solid var(--accent-color);
-    border-right: 1px solid var(--accent-color);
+    border-top: var(--border-pattern);
+    border-bottom: var(--border-pattern);
   }
 
   &__label {

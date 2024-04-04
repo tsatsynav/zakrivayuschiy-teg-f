@@ -4,7 +4,7 @@
 
 .main {
   @include display-flex-column;
-  flex-grow: 1;
+  // flex-grow: 1;
 }
 
 @import '../sections/sections';

@@ -11,10 +11,14 @@
     gap: 25px;
   }
 
+  .card__description {
+    gap: 28px;
+  }
+
   .save__button {
     inline-size: 340px;
     flex-direction: row;
-    padding: 12px 13px;
+    padding: 10px 17px;
   }
 
   .floppy {
