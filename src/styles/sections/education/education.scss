@@ -32,7 +32,7 @@
   inset: 0;
   font-family: var(--accent-font-family);
   font-size: 14px;
-  padding: 30px 26px;
+  padding: 30px 38px;
   color: var(--accent-color);
   background: var(--background-color);
   border: var(--border-pattern);
@@ -67,8 +67,8 @@
 }
 
 .dialog .floppy {
-  inline-size: 55px;
-  block-size: 55px;
+  inline-size: 50px;
+  block-size: 62px;
   mix-blend-mode: normal;
   color: var(--accent-color);
 }

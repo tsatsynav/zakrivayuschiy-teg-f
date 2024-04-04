@@ -24,7 +24,7 @@
 
   &__label {
     position: absolute;
-    right: 25px;
+    right: 11px;
     top: 25px;
     font-family: var(--accent-font-family);
     font-size: var(--label-font-size);
@@ -60,7 +60,7 @@
 
   &__description {
     @include display-flex-column;
-    gap: 26px;
+    gap: 28px;
   }
 
   &__button-line {

@@ -7,22 +7,32 @@
     padding: 5px 11px 4px;
   }
 
-  .card__content {
-    gap: 25px;
+  .card__label {
+    right: 25px;
   }
 
-  .card__description {
-    gap: 28px;
+  .card__content {
+    gap: 25px;
   }
 
   .save__button {
     inline-size: 340px;
     flex-direction: row;
-    padding: 10px 17px;
+    padding: 4px 20px;
+    justify-content: space-between;
   }
 
   .floppy {
-    inline-size: 32px;
-    block-size: 32px;
+    inline-size: 23px;
+    block-size: 45px;
+  }
+
+  .dialog {
+    padding: 30px;
+  }
+
+  .dialog .floppy {
+    inline-size: 38px;
+    block-size: 62px;
   }
 }
