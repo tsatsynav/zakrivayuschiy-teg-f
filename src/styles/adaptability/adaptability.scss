@@ -18,13 +18,11 @@
   .save__button {
     inline-size: 340px;
     flex-direction: row;
-    padding: 4px 20px;
-    justify-content: space-between;
+    padding: 14px 19px;
   }
 
   .floppy {
     inline-size: 23px;
-    block-size: 45px;
   }
 
   .dialog {
@@ -33,6 +31,5 @@
 
   .dialog .floppy {
     inline-size: 38px;
-    block-size: 62px;
   }
 }
