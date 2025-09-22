@@ -1,1 +1,51 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  /* <<< - - - FONTS VARIABLES - - - >>> */
+
+  --main-font-family: 'Inter-Variable';
+  --accent-font-family: 'PressStart2P';
+  --min-font-weight: 400;
+  --max-font-weight: 700;
+  --main-font-size: 18px;
+  --header-title-font-size: clamp(0.875rem, 0.7143rem + 0.8036vw, 1.4375rem);
+  --header-link-font-size: clamp(3.0625rem, 2.7768rem + 1.4286vw, 4.0625rem);
+  --theme-menu-button-font-size: 14px;
+  --card-title-font-size: clamp(1.125rem, 1.125rem + 0vw, 1.125rem);
+  --label-font-size: 14px;
+  --button-font-size: 14px;
+
+  /* <<< - - - COLOR & BACKGROUND VARIABLES - - - >>> */
+
+  --background-color: #fff;
+  --accent-color: #000;
+  --first-light-gradient-color: #d3d3d3;
+  --second-light-gradient-color: #e7e7e7;
+  --alternative-gradient-color: #1a1a1a;
+  --sparks-color: #f00;
+
+  /* <<< - - - INSIDE REUSE COLOR & BACKGROUND VARIABLES - - - >>> */
+
+  --background-image: repeating-linear-gradient(
+      90deg,
+      var(--first-light-gradient-color) 0 2px,
+      transparent 2px 4px
+    ),
+    repeating-linear-gradient(
+      180deg,
+      var(--first-light-gradient-color) 0 2px,
+      transparent 2px 4px
+    ),
+    linear-gradient(
+      180deg,
+      var(--second-light-gradient-color) 0.01%,
+      var(--alternative-gradient-color)
+    );
+  --label-color: var(--background-color);
+  --button-color: var(--background-color);
+
+  /* <<< - - - BLOCKS & OTHER PATTERN VARIABLES - - - >>> */
+
+  --border-pattern: 2px solid var(--accent-color);
+  --box-shadow-pattern: 2px 2px 0 0 var(--accent-color);
+  --floppy-color: var(--background-color);
+}
