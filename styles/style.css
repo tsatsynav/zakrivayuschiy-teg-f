@@ -26,14 +26,14 @@
   background-image: var(--background-image);
   background-size: cover;
   background-attachment: fixed;
-  font-family: var(--main-font-family), sans-serif;
+  font-family: var(--main-font-family);
   font-size: var(--main-font-size);
   color: var(--accent-color);
 }
 
 @supports (font-variation-settings: normal) {
   .page {
-    font-family: var(--main-font-family), sans-serif;
+    font-family: var(--main-font-family);
   }
 }
 
@@ -56,6 +56,12 @@
   font-size: var(--card-title-font-size);
 }
 
+@supports (font-variation-settings: normal) {
+  .card__title {
+    font-family: var(--card-title-font-size);
+  }
+}
+
 @media (width >= 576px) {
   .card__title {
     padding: 5px 11px 4px;
@@ -72,7 +78,7 @@
 
 .card__label {
   position: absolute;
-  right: 11px;
+  right: 25px;
   top: 25px;
   font-family: var(--accent-font-family);
   font-size: var(--label-font-size);
@@ -83,16 +89,16 @@
   z-index: 1;
 }
 
+@supports (text-stroke: 1px var(--label-color)) {
+  .card__label {
+    text-stroke: 1px var(--label-color);
+  }
+}
+
 @supports (-webkit-text-stroke: 1px var(--label-color)) {
   .card__label {
     -webkit-text-stroke: 1px var(--label-color);
     text-shadow: none;
-  }
-}
-
-@media (width >= 576px) {
-  .card__label {
-    right: 25px;
   }
 }
 
@@ -128,6 +134,7 @@
   outline: none;
   border: none;
   background-color: transparent;
+  transition: 0.3s ease;
 }
 
 .card__icon-button:focus {
@@ -149,11 +156,12 @@
 .page-button {
   position: relative;
   border: var(--border-pattern);
-  font-family: var(--accent-font-family), sans-serif;
+  font-family: var(--accent-font-family);
   font-size: var(--button-font-size);
   background-color: transparent;
   overflow: hidden;
   cursor: pointer;
+  transition: 0.3s ease;
 }
 
 .page-button:focus {
@@ -163,7 +171,6 @@
 .page-button:focus-visible {
   box-shadow: var(--box-shadow-pattern);
   outline: none;
-  transition: 0.3s ease;
 }
 
 .page-button::before {
@@ -292,31 +299,31 @@
   background-color: var(--background-color);
 }
 
-.education__item:nth-child(2) .card__image {
+.filter-grayscale {
   filter: grayscale(80%);
 }
 
-.education__item:nth-child(3) .card__image {
+.filter-hue {
   filter: hue-rotate(293deg);
 }
 
-.education__item:nth-child(4) .card__image {
+.filter-saturate {
   filter: saturate(666%);
 }
 
-.education__item:nth-child(5) .card__image {
+.filter-invert {
   filter: invert(75%);
 }
 
-.education__item:nth-child(6) .card__image {
+.filter-sepia {
   filter: sepia(100%);
 }
 
-.education__item:nth-child(7) .card__image {
+.filter-mix {
   filter: saturate(250%) hue-rotate(90deg) grayscale(20%) invert(25%) blur(2px);
 }
 
-.education__item:nth-child(8) .card__image {
+.filter-blur {
   filter: blur(2px);
 }
 
@@ -331,7 +338,6 @@
   color: var(--accent-color);
   background: var(--background-color);
   border: var(--border-pattern);
-  transition: opacity 0.9s ease-in-out;
 }
 
 @media (width >= 576px) {
