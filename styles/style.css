@@ -121,10 +121,12 @@
 
 .card__icon-button {
   display: flex;
-  cursor: pointer;
-  outline: none;
+  margin-inline-end: 4px;
+  padding: 0;
   border: 2px solid transparent;
   background-color: transparent;
+  cursor: pointer;
+  outline: none;
   transition: 0.3s ease;
 }
 
@@ -133,8 +135,7 @@
 }
 
 .card__icon-button:focus-visible {
-  border: var(--border-pattern);
-  /* outline-offset: -2px; */
+  border-color: var(--accent-color);
 }
 
 .card__like-button {
@@ -209,7 +210,7 @@
 /* <<< - - - 1.3.icons - - - >>> */
 
 .like-icon {
-  inline-size: 39px;
+  inline-size: 38px;
   block-size: 36px;
 }
 
