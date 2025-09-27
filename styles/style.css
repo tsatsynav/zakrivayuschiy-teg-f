@@ -31,12 +31,6 @@
   color: var(--accent-color);
 }
 
-@supports (font-variation-settings: normal) {
-  .page {
-    font-family: var(--main-font-family);
-  }
-}
-
 @media (width >= 576px) {
   .page {
     gap: 93px;
