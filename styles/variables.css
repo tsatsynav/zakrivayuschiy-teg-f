@@ -9,8 +9,8 @@
   --header-link-font-size: clamp(3.0625rem, 2.7768rem + 1.4286vw, 4.0625rem);
   --theme-menu-button-font-size: 14px;
   --card-title-font-size: clamp(1.125rem, 1.125rem + 0vw, 1.125rem);
-  --card-title-font-variation: "wght" 715;
-  --card-text-font-variation: "wght" 410;
+  --card-title-font-variation: 715;
+  --card-text-font-variation: 410;
   --label-font-size: 14px;
   --button-font-size: 14px;
   /* <<< - - - COLOR & BACKGROUND VARIABLES - - - >>> */

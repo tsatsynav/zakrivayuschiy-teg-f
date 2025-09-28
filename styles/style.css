@@ -49,7 +49,7 @@
 .card__title {
   padding: 4px 8px;
   font-size: var(--card-title-font-size);
-  font-variation-settings: var(--card-title-font-variation);
+  font-variation-settings: "wght" var(--card-title-font-variation);
 }
 
 @media (width >= 576px) {
@@ -107,7 +107,7 @@
   flex-direction: column;
   gap: 25px;
   line-height: 117%;
-  font-variation-settings: var(--card-text-font-variation);
+  font-variation-settings: "wght" var(--card-text-font-variation);
 }
 
 .card__button-line {
